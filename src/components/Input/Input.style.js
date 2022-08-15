@@ -1,9 +1,15 @@
 import {StyleSheet} from 'react-native';
 
 export default StyleSheet.create({
-  input: {
+  container: {
     backgroundColor: '#e0e0e0',
-    padding: 10,
+    padding: 5,
     margin: 10,
+    flexDirection: 'row',
+    alignItems: 'center',
+    borderRadius: 5,
+  },
+  input: {
+    flex: 1,
   },
 });
