@@ -1,4 +1,4 @@
-import React from 'react';
+import React, {useEffect, useState} from 'react';
 import {NavigationContainer} from '@react-navigation/native';
 
 import SignIn from './pages/auth/SignIn';
@@ -9,11 +9,20 @@ import Home from './pages/Home';
 import Profile from './pages/Profile';
 import Settings from './pages/Settings';
 import Icon from 'react-native-vector-icons/MaterialIcons';
+import auth from '@react-native-firebase/auth';
 
 const Tab = createBottomTabNavigator();
 const Stack = createNativeStackNavigator();
 
 const App = () => {
+  const [isSignedIn, setIsSignedIn] = useState();
+
+  useEffect(() => {
+    auth().onAuthStateChanged(user => {
+      setIsSignedIn(!!user);
+    });
+  }, []);
+
   const HomeStack = () => {
     return (
       <Tab.Navigator screenOptions={{headerShown: false}}>
@@ -48,9 +57,14 @@ const App = () => {
   return (
     <NavigationContainer>
       <Stack.Navigator screenOptions={{headerShown: false}}>
-        <Stack.Screen component={HomeStack} name="HomeStack" />
-        <Stack.Screen component={SignIn} name="SignInScreen" />
-        <Stack.Screen component={SignUp} name="SignUpScreen" />
+        {!isSignedIn ? (
+          <>
+            <Stack.Screen component={SignIn} name="SignInScreen" />
+            <Stack.Screen component={SignUp} name="SignUpScreen" />
+          </>
+        ) : (
+          <Stack.Screen component={HomeStack} name="HomeStack" />
+        )}
       </Stack.Navigator>
     </NavigationContainer>
   );
