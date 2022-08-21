@@ -1,28 +1,18 @@
-import {View, Text, FlatList, Image} from 'react-native';
-import React, {useState} from 'react';
-import Config from 'react-native-config';
-import useFetch from '../../hooks/useFetch';
-import Loading from '../../components/Loading';
-import Input from '../../components/Input';
-import HomeCard from '../../components/Cards/HomeCard';
-const Home = () => {
-  const [text, setText] = useState('');
-  const {data, loading, error} = useFetch(
-    `${Config.API_URL}search/instant?query=${text}`,
-  );
-
-  if (loading) {
-    return <Loading />;
-  }
-
-  const renderData = ({item}) => {
-    return <HomeCard branded={item} />;
+import {View, Text, TouchableOpacity} from 'react-native';
+import React from 'react';
+import styles from './Home.style';
+import Icon from 'react-native-vector-icons/MaterialIcons';
+import HomeCard from '../../components/Cards/HomeCard/HomeCard';
+const Home = ({navigation}) => {
+  const handlePressPlus = () => {
+    navigation.navigate('SearchFood');
   };
 
   return (
-    <View>
-      <Input onChangeText={setText} placeholder="Search foods to log" />
-      <FlatList data={data.branded} renderItem={renderData} />
+    <View style={styles.container}>
+      <HomeCard onPress={handlePressPlus} title="BREAKFAST" />
+      <HomeCard onPress={handlePressPlus} title="LUNCH" />
+      <HomeCard onPress={handlePressPlus} title="DINNER" />
     </View>
   );
 };

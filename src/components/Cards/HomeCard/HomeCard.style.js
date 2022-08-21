@@ -4,15 +4,23 @@ export default StyleSheet.create({
   container: {
     flex: 1,
     backgroundColor: '#fff',
-    alignItems: 'center',
-    justifyContent: 'center',
   },
-  food_name: {
+  title_container: {
+    flexDirection: 'row',
+    backgroundColor: '#e0e0e0',
+    alignItems: 'center',
+    padding: 10,
+  },
+  title: {
     fontSize: 20,
     fontWeight: 'bold',
+    marginLeft: 10,
   },
-  image: {
-    width: 150,
-    height: 150,
+  icon: {
+    color: '#fff',
+    marginLeft: 10,
+    backgroundColor: 'green',
+    borderRadius: 50,
+    padding: 5,
   },
 });
