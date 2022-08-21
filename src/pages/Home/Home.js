@@ -1,7 +1,6 @@
-import {View, Text, TouchableOpacity} from 'react-native';
+import {View} from 'react-native';
 import React from 'react';
 import styles from './Home.style';
-import Icon from 'react-native-vector-icons/MaterialIcons';
 import HomeCard from '../../components/Cards/HomeCard/HomeCard';
 const Home = ({navigation}) => {
   const handlePressPlus = () => {
