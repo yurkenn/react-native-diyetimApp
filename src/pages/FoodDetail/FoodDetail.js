@@ -10,7 +10,6 @@ const FoodDetail = ({route, navigation}) => {
     `${Config.API_URL}search/item?nix_item_id=${nix_item_id}`,
   );
 
-  console.log(data.foods);
   if (loading) {
     return <Loading />;
   }
