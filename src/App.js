@@ -11,7 +11,8 @@ import Settings from './pages/Settings';
 import Icon from 'react-native-vector-icons/MaterialIcons';
 import auth from '@react-native-firebase/auth';
 import SearchFood from './pages/SearchFood';
-
+import Basket from './pages/Basket';
+import FoodDetail from './pages/FoodDetail';
 const Tab = createBottomTabNavigator();
 const Stack = createNativeStackNavigator();
 
@@ -67,6 +68,7 @@ const App = () => {
           <>
             <Stack.Screen component={HomeStack} name="HomeStack" />
             <Stack.Screen component={SearchFood} name="SearchFood" />
+            <Stack.Screen component={FoodDetail} name="FoodDetail" />
           </>
         )}
       </Stack.Navigator>

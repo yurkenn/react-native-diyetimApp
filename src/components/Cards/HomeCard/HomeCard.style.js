@@ -2,19 +2,18 @@ import {StyleSheet} from 'react-native';
 
 export default StyleSheet.create({
   container: {
-    flex: 1,
     backgroundColor: '#fff',
   },
   title_container: {
     flexDirection: 'row',
     backgroundColor: '#e0e0e0',
     alignItems: 'center',
-    padding: 10,
+    padding: 5,
   },
   title: {
-    fontSize: 20,
+    fontSize: 15,
     fontWeight: 'bold',
-    marginLeft: 10,
+    marginLeft: 5,
   },
   icon: {
     color: '#fff',
@@ -22,5 +21,9 @@ export default StyleSheet.create({
     backgroundColor: 'green',
     borderRadius: 50,
     padding: 5,
+  },
+  added_foods: {
+    margin: 10,
+    marginLeft: 20,
   },
 });

@@ -1,4 +1,4 @@
-import {View, FlatList} from 'react-native';
+import {View, FlatList, TouchableOpacity} from 'react-native';
 import React, {useState} from 'react';
 import Config from 'react-native-config';
 import useFetch from '../../hooks/useFetch';
@@ -7,6 +7,7 @@ import Input from '../../components/Input';
 import SearchFoodCard from '../../components/Cards/SearchFoodCard';
 import Button from '../../components/Button';
 import styles from './SearchFood.style';
+
 const SearchFood = ({navigation}) => {
   const [text, setText] = useState('');
   const {data, loading} = useFetch(
@@ -17,19 +18,28 @@ const SearchFood = ({navigation}) => {
     return <Loading />;
   }
 
+  const handleAddSelectedItemtoBasket = nix_item_id => {
+    navigation.navigate('FoodDetail', {nix_item_id});
+  };
+
   const renderData = ({item}) => {
-    return <SearchFoodCard branded={item} />;
+    return (
+      <SearchFoodCard
+        branded={item}
+        onPress={() => handleAddSelectedItemtoBasket(item.nix_item_id)}
+      />
+    );
   };
 
   const handleGoHome = () => {
     navigation.goBack();
   };
-
+  console.log(data.branded);
   return (
-    <View>
+    <View style={styles.container}>
       <Input onChangeText={setText} placeholder="Search foods to log" />
       <FlatList data={data.branded} renderItem={renderData} />
-      <Button style={styles.button} text="Go Home" onPress={handleGoHome} />
+      <Button style={styles.button} text="Back" onPress={handleGoHome} />
     </View>
   );
 };

@@ -6,12 +6,14 @@ import Icon from 'react-native-vector-icons/MaterialIcons';
 const HomeCard = ({onPress, title}) => {
   return (
     <View style={styles.container}>
-      <TouchableOpacity onPress={onPress} style={styles.title_container}>
+      <View style={styles.title_container}>
         <Text style={styles.title}>{title}</Text>
-        <Icon name="add" size={20} style={styles.icon} />
-      </TouchableOpacity>
-      <View>
-        <Text>Cappicino</Text>
+        <TouchableOpacity onPress={onPress}>
+          <Icon name="add" size={15} style={styles.icon} />
+        </TouchableOpacity>
+      </View>
+      <View style={styles.added_foods}>
+        <Text>No foods logged yet</Text>
       </View>
     </View>
   );
