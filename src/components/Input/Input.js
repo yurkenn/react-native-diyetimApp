@@ -12,7 +12,7 @@ const Input = ({placeholder, onChangeText, value, isSecure, icon}) => {
         onChangeText={onChangeText}
         secureTextEntry={isSecure}
       />
-      <Icon name={icon} size={30} />
+      <Icon name={icon} size={25} />
     </View>
   );
 };
