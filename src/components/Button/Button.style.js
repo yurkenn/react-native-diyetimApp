@@ -1,17 +1,20 @@
 import {StyleSheet} from 'react-native';
+import colors from '../../styles/colors';
 
 export default StyleSheet.create({
   button: {
-    margin: 10,
-    padding: 10,
+    width: 290,
+    height: 72,
     borderRadius: 20,
-    backgroundColor: 'green',
-    marginHorizontal: 20,
+    margin: 25,
+    backgroundColor: colors.lightGreen,
+    justifyContent: 'center',
+    alignItems: 'center',
   },
   text: {
     color: 'white',
     textAlign: 'center',
-    fontSize: 15,
+    fontSize: 25,
     fontWeight: '500',
   },
 });
