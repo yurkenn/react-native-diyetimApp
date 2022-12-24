@@ -12,8 +12,8 @@ const App = () => {
         screenOptions={{
           headerShown: false,
         }}>
-        <Stack.Screen name="HomeStack" component={HomeStack} />
         <Stack.Screen name="AuthStack" component={AuthStack} />
+        <Stack.Screen name="HomeStack" component={HomeStack} />
       </Stack.Navigator>
     </NavigationContainer>
   );
