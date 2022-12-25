@@ -2,14 +2,75 @@ import React from 'react';
 import {createBottomTabNavigator} from '@react-navigation/bottom-tabs';
 import Home from '../screens/Home';
 import Profile from '../screens/Profile';
+import Icon from 'react-native-vector-icons/AntDesign';
+import colors from '../styles/colors';
+import Scanner from '../screens/Scanner';
 
 const Tab = createBottomTabNavigator();
 
 const TabNavigation = () => {
   return (
-    <Tab.Navigator>
-      <Tab.Screen name="Home" component={Home} />
-      <Tab.Screen name="Profile" component={Profile} />
+    <Tab.Navigator
+      screenOptions={{
+        tabBarStyle: {
+          backgroundColor: colors.background,
+          borderTopWidth: 0,
+          elevation: 0,
+          position: 'absolute',
+          bottom: 0,
+          left: 0,
+          right: 0,
+          height: 60,
+        },
+        tabBarShowLabel: false,
+        tabBarActiveTintColor: colors.lightGreen,
+        tabBarInactiveTintColor: colors.grey400,
+      }}>
+      <Tab.Screen
+        name="Home"
+        component={Home}
+        options={{
+          tabBarIcon: ({color, size}) => (
+            <Icon name="home" color={color} size={size} />
+          ),
+        }}
+      />
+      <Tab.Screen
+        name="Search"
+        component={Home}
+        options={{
+          tabBarIcon: ({color, size}) => (
+            <Icon name="search1" color={color} size={size} />
+          ),
+        }}
+      />
+      <Tab.Screen
+        name="Scanner"
+        component={Scanner}
+        options={{
+          tabBarIcon: ({color, size}) => (
+            <Icon name="scan1" color={color} size={size} />
+          ),
+        }}
+      />
+      <Tab.Screen
+        name="Favorites"
+        component={Home}
+        options={{
+          tabBarIcon: ({color, size}) => (
+            <Icon name="hearto" color={color} size={size} />
+          ),
+        }}
+      />
+      <Tab.Screen
+        name="Profile"
+        component={Profile}
+        options={{
+          tabBarIcon: ({color, size}) => (
+            <Icon name="user" color={color} size={size} />
+          ),
+        }}
+      />
     </Tab.Navigator>
   );
 };
