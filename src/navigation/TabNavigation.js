@@ -1,10 +1,11 @@
 import React from 'react';
 import {createBottomTabNavigator} from '@react-navigation/bottom-tabs';
-import Home from '../screens/Home';
-import Profile from '../screens/Profile';
 import Icon from 'react-native-vector-icons/AntDesign';
-import colors from '../styles/colors';
+import Home from '../screens/Home';
+import Search from '../screens/Search';
+import Profile from '../screens/Profile';
 import Scanner from '../screens/Scanner';
+import colors from '../styles/colors';
 
 const Tab = createBottomTabNavigator();
 
@@ -25,11 +26,23 @@ const TabNavigation = () => {
         tabBarShowLabel: false,
         tabBarActiveTintColor: colors.lightGreen,
         tabBarInactiveTintColor: colors.grey400,
+        headerTitleAlign: 'center',
+        headerStyle: {
+          backgroundColor: colors.background,
+          elevation: 0,
+        },
+        headerTintColor: colors.white,
+        headerTitleStyle: {
+          fontSize: 16,
+          fontWeight: 'bold',
+          letterSpacing: 1,
+        },
       }}>
       <Tab.Screen
         name="Home"
         component={Home}
         options={{
+          headerShown: false,
           tabBarIcon: ({color, size}) => (
             <Icon name="home" color={color} size={size} />
           ),
@@ -37,7 +50,7 @@ const TabNavigation = () => {
       />
       <Tab.Screen
         name="Search"
-        component={Home}
+        component={Search}
         options={{
           tabBarIcon: ({color, size}) => (
             <Icon name="search1" color={color} size={size} />
