@@ -17,12 +17,8 @@ const Login = ({navigation}) => {
     navigation.navigate('SignUp');
   };
   const onSubmit = async values => {
-    const {email, password} = values;
     setLoading(true);
-    const result = await loginFB(email, password);
-    if (result) {
-      navigation.navigate('Home');
-    }
+    await loginFB(values.email, values.password);
     setLoading(false);
   };
 

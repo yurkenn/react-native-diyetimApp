@@ -5,8 +5,11 @@ import {Formik} from 'formik';
 import * as Yup from 'yup';
 import Input from '../../../components/Input';
 import Button from '../../../components/Button';
+import {signUpFB} from '../../../firebase';
+import {useState} from 'react';
 
 const Sign = ({navigation}) => {
+  const [loading, setLoading] = useState(false);
   const validationSchema = Yup.object().shape({
     email: Yup.string().email('Invalid email').required('Required'),
     password: Yup.string().required('Required'),
@@ -15,15 +18,21 @@ const Sign = ({navigation}) => {
       .required('Required'),
   });
 
-  const handleSignUp = () => {
+  const handleSignUpText = () => {
     navigation.navigate('Login');
+  };
+
+  const onSubmit = async values => {
+    setLoading(true);
+    await signUpFB(values.email, values.password);
+    setLoading(false);
   };
 
   return (
     <View style={styles.container}>
       <Formik
-        initialValues={{email: '', password: ''}}
-        onSubmit={values => console.log(values)}
+        initialValues={{email: '', password: '', confirmPassword: ''}}
+        onSubmit={onSubmit}
         validationSchema={validationSchema}>
         {({handleChange, handleBlur, handleSubmit, values, errors}) => (
           <View style={styles.innerContainer}>
@@ -58,10 +67,10 @@ const Sign = ({navigation}) => {
             {errors.password && (
               <Text style={styles.error}>{errors.password}</Text>
             )}
-            <Button title="Sign Up" onPress={handleSubmit} />
+            <Button title="Sign Up" onPress={handleSubmit} loading={loading} />
             <View style={styles.bottomContainer}>
               <Text style={styles.bottomText}>Already Have An Account ?</Text>
-              <Text style={styles.bottomButton} onPress={handleSignUp}>
+              <Text style={styles.bottomButton} onPress={handleSignUpText}>
                 Log In
               </Text>
             </View>

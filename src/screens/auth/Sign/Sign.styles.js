@@ -4,7 +4,7 @@ import colors from '../../../styles/colors';
 export default StyleSheet.create({
   container: {
     flex: 1,
-    backgroundColor: colors.grey200,
+    backgroundColor: colors.background,
     alignItems: 'center',
     justifyContent: 'center',
   },
