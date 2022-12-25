@@ -1,10 +1,10 @@
 import {View, Text} from 'react-native';
 import React from 'react';
-
+import styles from './Scanner.styles';
 const Scanner = () => {
   return (
-    <View>
-      <Text>Scanner</Text>
+    <View style={styles.container}>
+      <Text>Profile</Text>
     </View>
   );
 };
