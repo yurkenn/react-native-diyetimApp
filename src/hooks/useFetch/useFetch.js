@@ -6,13 +6,14 @@ const useFetch = url => {
   const [data, setData] = useState([]);
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState(null);
+  const [ingr, setIngr] = useState(null);
 
   useEffect(() => {
     const fetchData = async () => {
       try {
         const response = await axios.get(url, {
           params: {
-            ingr: 'chicken',
+            ingr: ingr,
           },
           headers: {
             'X-RapidAPI-Host': Config.API_HOST,
@@ -27,9 +28,9 @@ const useFetch = url => {
       }
     };
     fetchData();
-  }, [url]);
+  }, [url, ingr]);
 
-  return {data, loading, error};
+  return {data, loading, error, setIngr};
 };
 
 export default useFetch;
