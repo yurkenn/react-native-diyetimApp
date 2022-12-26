@@ -5,6 +5,7 @@ const colors = {
   grey200: '#E5E5E5',
   grey400: '#7C7C7C',
   background: '#FFFFFF',
+  searchCard: '#EFF7EE',
 };
 
 export default colors;
