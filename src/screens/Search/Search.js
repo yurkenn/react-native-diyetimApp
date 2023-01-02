@@ -1,13 +1,10 @@
-import {View, Text, FlatList, Alert, TouchableOpacity} from 'react-native';
-import React from 'react';
+import {View, FlatList, Alert} from 'react-native';
+import React, {useState} from 'react';
 import styles from './Search.styles';
 import Input from '../../components/Input';
 import Config from 'react-native-config';
 import useFetch from '../../hooks/useFetch/useFetch';
 import SearchCard from '../../components/Cards/SearchCard/SearchCard';
-import {useState} from 'react';
-import FoodDetailModal from '../../components/Modal/FoodDetailModal/FoodDetailModal';
-import Pressable from 'react-native/Libraries/Components/Pressable/Pressable';
 
 const Search = () => {
   const [search, setSearch] = useState('');
