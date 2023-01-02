@@ -4,6 +4,7 @@ const colors = {
   grey100: '#F4F4F4',
   grey200: '#E5E5E5',
   grey400: '#7C7C7C',
+  grey500: '#696969',
   background: '#FFFFFF',
   searchCard: '#EFF7EE',
   modalNutritionBackGround: '#FFF8EE',
