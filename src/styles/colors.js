@@ -6,6 +6,8 @@ const colors = {
   grey400: '#7C7C7C',
   background: '#FFFFFF',
   searchCard: '#EFF7EE',
+  modalNutritionBackGround: '#FFF8EE',
+  modalNutritionText: '#FF8473',
 };
 
 export default colors;
