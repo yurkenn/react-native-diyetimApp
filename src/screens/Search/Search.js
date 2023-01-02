@@ -10,8 +10,6 @@ const Search = () => {
   const [search, setSearch] = useState('');
   const {data, loading, error, setIngr} = useFetch(Config.API_URL);
 
-  console.log(data.hints);
-
   const renderItem = ({item}) => {
     return <SearchCard item={item} />;
   };
