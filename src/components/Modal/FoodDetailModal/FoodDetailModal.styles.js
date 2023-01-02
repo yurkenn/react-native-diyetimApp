@@ -7,7 +7,7 @@ export default StyleSheet.create({
     padding: 20,
     borderTopLeftRadius: 20,
     borderTopRightRadius: 20,
-    height: deviceSize.height / 1.5,
+    height: deviceSize.height / 1.2,
   },
   modal: {
     justifyContent: 'flex-end',
@@ -19,9 +19,15 @@ export default StyleSheet.create({
     justifyContent: 'space-between',
   },
   image: {
-    width: deviceSize.width / 2.4,
+    width: deviceSize.width / 2.2,
     height: deviceSize.height / 3,
     resizeMode: 'contain',
+  },
+  label: {
+    fontSize: 24,
+    fontWeight: '400',
+    color: colors.grey400,
+    marginBottom: 10,
   },
   nutrition_container: {
     flexDirection: 'row',
@@ -35,7 +41,7 @@ export default StyleSheet.create({
   },
   nutrition_text: {
     fontSize: 16,
-    fontWeight: '400',
+    fontWeight: 'bold',
     color: colors.modalNutritionText,
     marginBottom: 10,
   },
