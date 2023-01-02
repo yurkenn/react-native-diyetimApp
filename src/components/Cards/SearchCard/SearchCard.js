@@ -1,10 +1,13 @@
-import {View, Text, Image, TouchableOpacity} from 'react-native';
+import {View, Text, Image, TouchableOpacity, Alert} from 'react-native';
 import React from 'react';
 import styles from './SearchCard.styles';
 import FoodDetailModal from '../../Modal/FoodDetailModal/FoodDetailModal';
 import {useState} from 'react';
+import {useDispatch, useSelector} from 'react-redux';
+import {addFavorite, selectFavorites} from '../../../store/favoriteSlice';
 const SearchCard = ({item}) => {
   const [isVisible, setIsVisible] = useState(false);
+  const dispatch = useDispatch();
 
   let Cal;
   let Carb;
@@ -23,7 +26,14 @@ const SearchCard = ({item}) => {
     setIsVisible(!isVisible);
   };
 
+  const favorites = useSelector(selectFavorites);
   const handleModalSend = () => {
+    // check if item is already in favorites
+    if (favorites.find(favorite => favorite.food.foodId === item.food.foodId)) {
+      return Alert.alert('This item is already in your favorites');
+    }
+
+    dispatch(addFavorite(item));
     handleModalToggle();
   };
 
