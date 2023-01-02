@@ -5,6 +5,7 @@ import Home from '../screens/Home';
 import Search from '../screens/Search';
 import Profile from '../screens/Profile';
 import Scanner from '../screens/Scanner';
+import Favorites from '../screens/Favorites';
 import colors from '../styles/colors';
 
 const Tab = createBottomTabNavigator();
@@ -68,7 +69,7 @@ const TabNavigation = () => {
       />
       <Tab.Screen
         name="Favorites"
-        component={Home}
+        component={Favorites}
         options={{
           tabBarIcon: ({color, size}) => (
             <Icon name="hearto" color={color} size={size} />
