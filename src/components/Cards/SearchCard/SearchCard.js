@@ -1,4 +1,4 @@
-import {View, Text, Image, Pressable, TouchableOpacity} from 'react-native';
+import {View, Text, Image, TouchableOpacity} from 'react-native';
 import React from 'react';
 import styles from './SearchCard.styles';
 import FoodDetailModal from '../../Modal/FoodDetailModal/FoodDetailModal';
@@ -12,11 +12,11 @@ const SearchCard = ({item}) => {
   let Protein;
   let Fiber;
   if (item.food && item.food.nutrients) {
-    Cal = item.food.nutrients.ENERC_KCAL;
-    Carb = item.food.nutrients.CHOCDF;
-    Fat = item.food.nutrients.FAT;
-    Protein = item.food.nutrients.PROCNT;
-    Fiber = item.food.nutrients.FIBTG;
+    Cal = item.food.nutrients.ENERC_KCAL?.toFixed(1);
+    Carb = item.food.nutrients.CHOCDF?.toFixed(1);
+    Fat = item.food.nutrients.FAT?.toFixed(1);
+    Protein = item.food.nutrients.PROCNT?.toFixed(1);
+    Fiber = item.food.nutrients.FIBTG?.toFixed(1);
   }
 
   const handleModalToggle = () => {
