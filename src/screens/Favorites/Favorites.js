@@ -13,7 +13,7 @@ const Favorites = () => {
     return <SearchCard item={item} />;
   };
 
-  const emtpyList = (
+  const emptyList = (
     <View style={styles.emptyContainer}>
       <Image
         style={styles.image}
@@ -32,7 +32,7 @@ const Favorites = () => {
         Press long for delete your favorite food!
       </Text>
       {favorites.length === 0 ? (
-        emtpyList
+        emptyList
       ) : (
         <FlatList data={favorites} renderItem={renderItem} />
       )}
