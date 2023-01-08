@@ -1,6 +1,13 @@
 import {StyleSheet} from 'react-native';
 import colors from '../../../styles/colors';
 export default StyleSheet.create({
+  deleteInfo: {
+    color: colors.grey400,
+    fontSize: 12,
+    fontWeight: '300',
+    textAlign: 'center',
+    marginBottom: 10,
+  },
   container: {
     flex: 1,
     flexDirection: 'row',
