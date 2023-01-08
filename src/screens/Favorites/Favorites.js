@@ -28,6 +28,9 @@ const Favorites = () => {
 
   return (
     <View style={styles.container}>
+      <Text style={styles.deleteInfo}>
+        Press long for delete your favorite food!
+      </Text>
       {favorites.length === 0 ? (
         emtpyList
       ) : (
