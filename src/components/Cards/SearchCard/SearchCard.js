@@ -4,7 +4,11 @@ import styles from './SearchCard.styles';
 import FoodDetailModal from '../../Modal/FoodDetailModal/FoodDetailModal';
 import {useState} from 'react';
 import {useDispatch, useSelector} from 'react-redux';
-import {addFavorite, selectFavorites} from '../../../store/favoriteSlice';
+import {
+  addFavorite,
+  deleteFavorite,
+  selectFavorites,
+} from '../../../store/favoriteSlice';
 const SearchCard = ({item}) => {
   const [isVisible, setIsVisible] = useState(false);
   const dispatch = useDispatch();
@@ -37,13 +41,19 @@ const SearchCard = ({item}) => {
     handleModalToggle();
   };
 
+  const handleDeleteFavorites = () => {
+    dispatch(deleteFavorite(item.food.foodId));
+  };
+
   const foodName =
     item.food.label.length > 20
       ? item.food.label.slice(0, 20) + '...'
       : item.food.label;
 
   return (
-    <TouchableOpacity onPress={handleModalToggle}>
+    <TouchableOpacity
+      onLongPress={handleDeleteFavorites}
+      onPress={handleModalToggle}>
       <View style={styles.container}>
         <View style={styles.imageContainer}>
           <Image style={styles.image} source={{uri: item.food.image}} />
