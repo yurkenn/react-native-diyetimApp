@@ -13,7 +13,7 @@ const favoriteSlice = createSlice({
     },
     deleteFavorite: (state, action) => {
       state.favorites = state.favorites.filter(
-        favorite => favorite.id !== action.payload.id,
+        item => item.food.foodId !== action.payload,
       );
     },
   },
