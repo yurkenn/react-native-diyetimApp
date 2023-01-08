@@ -54,9 +54,6 @@ const SearchCard = ({item}) => {
     <TouchableOpacity
       onLongPress={handleDeleteFavorites}
       onPress={handleModalToggle}>
-      <Text style={styles.deleteInfo}>
-        Press long for delete your favorite food!
-      </Text>
       <View style={styles.container}>
         <View style={styles.imageContainer}>
           <Image style={styles.image} source={{uri: item.food.image}} />
