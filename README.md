@@ -3,10 +3,9 @@
 ## Screenshots
 
 <div>
-<img src="https://user-images.githubusercontent.com/69719126/210265085-eb48e777-5d60-43f6-8ae1-82b824d4d64d.png" width="222" height="480" />
-<img src="https://user-images.githubusercontent.com/69719126/210265084-0e1f4c2c-3a59-4b0f-bd25-3e2bb6629f06.png" width="222" height="480" />
-<img src="https://user-images.githubusercontent.com/69719126/210265082-4bc2bbc3-a6e5-4001-ae39-d40d48818e3a.png" width="222" height="480" />
 <img src="https://user-images.githubusercontent.com/69719126/210265081-21ae8b65-1354-4171-b2b2-d117eeeee634.png" width="222" height="480" />
+<img src="https://user-images.githubusercontent.com/69719126/210265082-4bc2bbc3-a6e5-4001-ae39-d40d48818e3a.png" width="222" height="480" />
+<img src="https://user-images.githubusercontent.com/69719126/210265085-eb48e777-5d60-43f6-8ae1-82b824d4d64d.png" width="222" height="480" />
 </div>
 
 ## Setup
